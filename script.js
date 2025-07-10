@@ -9,8 +9,8 @@ function rollDice() {
   const roll1 = Math.floor(Math.random() * 6) + 1;
   const roll2 = Math.floor(Math.random() * 6) + 1;
 
-  die1.src = `https://upload.wikimedia.org/wikipedia/commons/${getDieImage(roll1)}.svg`;
-  die2.src = `https://upload.wikimedia.org/wikipedia/commons/${getDieImage(roll2)}.svg`;
+  die1.src = `imgs/dice${roll1}.png`;
+  die2.src = `imgs/dice${roll2}.png`;
 
   totalDisplay.textContent = `Total: ${roll1 + roll2}`;
 }
