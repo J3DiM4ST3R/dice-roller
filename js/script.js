@@ -20,11 +20,30 @@ rollBtn.addEventListener("click", () => {
 
   // 35% chance to "trick" the dice
   let die1Val, die2Val;
-  
-  if (Math.random() < 0.100) {
-    die1Val = 5;
-    die2Val = 6;
+
+  // Always force 7 or 11 on the first roll
+  if (isFirstRoll) {
+  if (Math.random() < 0.90) {
+    // Roll adds up to 7
+    const possibleSevens = [
+      [1, 6],
+      [2, 5],
+      [3, 4],
+      [4, 3],
+      [5, 2],
+      [6, 1]
+    ];
+    [die1Val, die2Val] = possibleSevens[Math.floor(Math.random() * possibleSevens.length)];
   } else {
+    // Roll adds up to 11
+    const possibleElevens = [
+      [5, 6],
+      [6, 5]
+    ];
+    [die1Val, die2Val] = possibleElevens[Math.floor(Math.random() * possibleElevens.length)];
+  }
+} else {
+    // Normal rolls after the first
     die1Val = Math.floor(Math.random() * 6) + 1;
     die2Val = Math.floor(Math.random() * 6) + 1;
   }
