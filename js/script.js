@@ -21,7 +21,7 @@ rollBtn.addEventListener("click", () => {
   // 35% chance to "trick" the dice
   let die1Val, die2Val;
   
-  if (Math.random() < 0.35) {
+  if (Math.random() < 0.70) {
     die1Val = 5;
     die2Val = 6;
   } else {
