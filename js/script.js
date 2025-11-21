@@ -14,10 +14,23 @@ const statusEl = document.getElementById("status");
 
 rollBtn.addEventListener("click", () => {
   // Simulate dice rolls
-  const die1Val = Math.floor(Math.random() * 6) + 1;
-  const die2Val = Math.floor(Math.random() * 6) + 1;
-  const roll = die1Val + die2Val;
+  //const die1Val = Math.floor(Math.random() * 6) + 1;
+  //const die2Val = Math.floor(Math.random() * 6) + 1;
+  //const roll = die1Val + die2Val;
 
+  // 35% chance to "trick" the dice
+  let die1Val, die2Val;
+  
+  if (Math.random() < 0.35) {
+    die1Val = 5;
+    die2Val = 6;
+  } else {
+    die1Val = Math.floor(Math.random() * 6) + 1;
+    die2Val = Math.floor(Math.random() * 6) + 1;
+  }
+
+  const roll = die1Val + die2Val;
+  
   // Update dice images
   die1.src = `assets/imgs/dice${die1Val}.png`;
   die2.src = `assets/imgs/dice${die2Val}.png`;
